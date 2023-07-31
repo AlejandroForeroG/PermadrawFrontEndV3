@@ -3,7 +3,14 @@ import { RiEdit2Line, RiDeleteBinLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 
 export function Card({
-  participante: { linkImagen, name, linkTwitter, usuario, oc, state, monedas },
+  participante: { 
+    linkImagen, 
+    name,
+    linkTwitter,
+    usuario,
+    oc,
+    estado,
+    monedas },
 }) {
   const estados = ["Vivo", "Eliminado", "Vivo"];
   const navigate = useNavigate();
@@ -16,7 +23,7 @@ export function Card({
             <img
               src={linkImagen}
               alt={name}
-              class={estados[state] == "Eliminado" ? "grayscale" : ""}
+              class={estados[estado] == "Eliminado" ? "grayscale" : ""}
             />
           </a>
         </div>
@@ -24,10 +31,10 @@ export function Card({
           <div className="text-container">
             <a href={linkTwitter}>{oc}</a>
             <p>{usuario}</p>
-            {/* <p className={estados[state] == "Vivo" ? "vivo" : "muerto"}>
-              {estados[state]}
+            {/* <p className={estados[estado] == "Vivo" ? "vivo" : "muerto"}>
+              {estados[estado]}
             </p> */}
-            {estados[state] == "Vivo" ? <p>{monedas} 💲</p> : <p>💀</p>}
+            {estados[estado] == "Vivo" ? <p>{monedas} 💲</p> : <p>💀</p>}
           </div>
         </div>
       </div>

@@ -51,7 +51,8 @@ export function Home() {
   }
 
   const search = () => {
-    return participantes.filter((participante) => {
+      const sorted = [...participantes].sort((a, b) => a.estado - b.estado);
+    return sorted.filter((participante) => {
       return (
         participante.usuario.toLowerCase().includes(query.toLowerCase()) ||
         participante.nombre_oc.toLowerCase().includes(query.toLowerCase())
