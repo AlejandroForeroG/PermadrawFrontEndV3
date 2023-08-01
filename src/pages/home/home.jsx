@@ -192,7 +192,8 @@ const Container = styled.div`
   @media (max-width: 768px) {
     .card-container {
       grid-template-columns: repeat(3, 1fr);
-      padding: 20px;
+      padding: 10px;
+
     }
 
     .Searcher-container {
